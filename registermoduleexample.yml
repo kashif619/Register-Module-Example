@@ -1,0 +1,10 @@
+---
+- name: Register module example
+  become: yes
+  hosts: sandeep
+  tasks:
+  - shell: cat /etc/passwd
+    register: amit
+  - name: Showing the content
+    debug:
+      msg: "The content is {{ amit }}"    
